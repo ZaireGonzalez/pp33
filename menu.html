@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal - Sistema Agrícola</title>
+    <link rel="stylesheet" href="styles/menu.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido al Sistema Agrícola</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showTable('venta')">VENTA</a></li>
+                <li><a href="#" onclick="showTable('anulacion')">ANULACIÓN</a></li>
+                <li><a href="#" onclick="showTable('cierre')">CIERRE</a></li>
+                <li><a href="#" onclick="showTable('configuracion')">CONFIGURACIÓN</a></li>
+                <li><a href="#" onclick="showTable('proveedor')">PROVEEDOR</a></li>
+                <li><a href="#" onclick="showTable('inventario')">INVENTARIO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="venta" class="table-container" style="display: none;">
+        <h2>VENTA</h2>
+        <table>
+            <tr><th>Producto</th><th>Cantidad</th><th>Precio</th></tr>
+            <tr><td>Tomates</td><td>50</td><td>$30</td></tr>
+            <tr><td>Papas</td><td>100</td><td>$20</td></tr>
+        </table>
+    </div>
+
+    <div id="anulacion" class="table-container" style="display: none;">
+        <h2>ANULACIÓN</h2>
+        <table>
+            <tr><th>Motivo</th><th>Fecha</th></tr>
+            <tr><td>Cancelado</td><td>2024-11-25</td></tr>
+        </table>
+    </div>
+
+    <div id="cierre" class="table-container" style="display: none;">
+        <h2>CIERRE</h2>
+        <table>
+            <tr><th>Fecha</th><th>Valor</th><th>Estado</th></tr>
+            <tr><td>2024-11-25</td><td>$500</td><td>Completado</td></tr>
+        </table>
+    </div>
+
+    <div id="configuracion" class="table-container" style="display: none;">
+        <h2>CONFIGURACIÓN</h2>
+        <table>
+            <tr><th>Parámetro</th><th>Estado</th></tr>
+            <tr><td>Notificaciones</td><td>Activado</td></tr>
+        </table>
+    </div>
+
+    <div id="proveedor" class="table-container" style="display: none;">
+        <h2>PROVEEDOR</h2>
+        <table>
+            <tr><th>Nombre</th><th>Contacto</th></tr>
+            <tr><td>Proveedor A</td><td>contacto@proveedora.com</td></tr>
+        </table>
+    </div>
+
+    <div id="inventario" class="table-container" style="display: none;">
+        <h2>INVENTARIO</h2>
+        <table>
+            <tr><th>Producto</th><th>Stock</th></tr>
+            <tr><td>Tomates</td><td>200</td></tr>
+            <tr><td>Papas</td><td>300</td></tr>
+        </table>
+    </div>
+
+    <script>
+        function showTable(tableId) {
+            const tables = document.querySelectorAll('.table-container');
+            tables.forEach(table => {
+                table.style.display = 'none';
+            });
+            document.getElementById(tableId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
